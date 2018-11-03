@@ -2,6 +2,14 @@ import React, {Component} from 'react';
 
 class PageFour extends Component {
 
+    // handleInputNumber = (event) => {
+    //     this.setState({
+    //         ...this.state,
+    //         rankNumber: event.target.value 
+    //     });
+    //     console.log('clicked number is: ', event.target.value);
+    // }
+    
     handleClick = () => {
         this.props.history.push('PageFive')
     }

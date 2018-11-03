@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import {HashRouter as Router, Route} from 'react-router-dom';
+import {connect} from 'react-redux';
 import PageOne from '../PageOne/PageOne';
 import PageTwo from '../PageTwo/PageTwo';
 import PageThree from '../PageThree/PageThree';
@@ -33,4 +34,6 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = reduxState => ({reduxState});
+
+export default connect(mapStateToProps)(App);
