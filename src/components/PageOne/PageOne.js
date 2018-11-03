@@ -13,7 +13,7 @@ handleClick = () => {
         return(
             <div>
                 <h1>Page One</h1>
-                <button onClick={this.handleClick}>>Next</button>
+                <button onClick={this.handleClick}>Next</button>
             </div>  
         )
     }
