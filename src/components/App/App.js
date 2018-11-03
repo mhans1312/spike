@@ -8,6 +8,7 @@ import PageTwo from '../PageTwo/PageTwo';
 import PageThree from '../PageThree/PageThree';
 import PageFour from '../PageFour/PageFour';
 import PageFive from '../PageFive/PageFive';
+import admin from '../admin/admin';
 
 const newFeedback = {
   feeling: '',

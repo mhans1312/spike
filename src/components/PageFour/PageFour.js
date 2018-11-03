@@ -11,7 +11,7 @@ class PageFour extends Component {
       //posting the feedback
   postFeedback = () => {
       console.log('about to POST', this.props.reduxState.feedbackReducer);
-    axios.post({
+    axios({
       method: 'POST',
       url: '/feedback',
       data: this.props.reduxState.feedbackReducer
@@ -35,7 +35,7 @@ class PageFour extends Component {
         this.props.dispatch({type: 'SET_COMMENT', payload: this.state});
         console.log('what we have before postFeedback', this.state);
         this.postFeedback();
-        //this.props.history.push('PageFour')
+        this.props.history.push('PageFive')
     }
 
 
