@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 class PageOne extends Component {
 
+    //getting the clicked number into state
     handleInputNumber = (event) => {
         this.setState({
             ...this.state,
@@ -10,6 +11,7 @@ class PageOne extends Component {
         console.log('clicked number is: ', event.target.value);
     }
 
+    //getting input number into state and going to next page
     handleClick = () => {
     this.props.history.push('/PageTwo')
 }

@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 
 class PageFour extends Component {
 
-    // handleInputNumber = (event) => {
-    //     this.setState({
-    //         ...this.state,
-    //         rankNumber: event.target.value 
-    //     });
-    //     console.log('clicked number is: ', event.target.value);
-    // }
+    handleInputComment = (event) => {
+        this.setState({
+            ...this.state,
+            comment: event.target.value 
+        });
+        console.log('clicked number is: ', event.target.comment);
+    }
     
     handleClick = () => {
         this.props.history.push('PageFive')
@@ -19,7 +19,7 @@ class PageFour extends Component {
             <div>
                 <h1>Any comments you want to leave?</h1>
                     <form>
-                        <textarea name="comment" form="usrform" placeholder="Enter comments here..."></textarea>
+                        <textarea onChange={this.handleInputComment} name="comment" form="usrform" placeholder="Enter comments here..."></textarea>
                     </form>
                 <button onClick={this.handleClick}>Next</button>
             </div>
