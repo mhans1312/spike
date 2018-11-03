@@ -9,9 +9,18 @@ import PageThree from '../PageThree/PageThree';
 import PageFour from '../PageFour/PageFour';
 import PageFive from '../PageFive/PageFive';
 
-
 //setting up class
 class App extends Component {
+
+  // componentDidMount(){
+  //   this.getFeedback();
+  // }
+
+  //getting the feedback
+  // getFeedback = () => {
+  //   axios.get()
+  // }
+
   render() {
     return (
       <div className="App">

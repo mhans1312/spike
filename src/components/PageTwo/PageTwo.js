@@ -5,9 +5,10 @@ class PageTwo extends Component {
     handleInputNumber = (event) => {
         this.setState({
             ...this.state,
-            rankNumber: event.target.value 
+            rankNumber: event.target.value,
         });
         console.log('clicked number is: ', event.target.value);
+        
     }
 
     handleClick = () => {

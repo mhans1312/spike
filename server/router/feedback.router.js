@@ -1,3 +1,6 @@
+//I just copied and pasted this part and hopefully changed the
+//right variables. 
+
 const express = require('express');
 const feedbackList = [];
 

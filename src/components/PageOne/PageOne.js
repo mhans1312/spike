@@ -2,17 +2,23 @@ import React, {Component} from 'react';
 
 class PageOne extends Component {
 
+    state = {
+        newFeedback: ''
+    }
+    //sending feedback to reducer
+
+
     //getting the clicked number into state
     handleInputNumber = (event) => {
         this.setState({
-            ...this.state,
-            rankNumber: event.target.value 
+            newFeedback: event.target.value 
         });
         console.log('clicked number is: ', event.target.value);
     }
 
     //getting input number into state and going to next page
     handleClick = () => {
+        //this.props.dispatch({type: 'SET_FEEDBACK', payload: this.state.newFeedback})
     this.props.history.push('/PageTwo')
 }
 
@@ -29,7 +35,8 @@ class PageOne extends Component {
                         <input onChange={this.handleInputNumber} type="radio" value="5" /><label>5</label>
                         <text>I feel great!</text>
                     </form>
-                <button onClick={this.handleClick}>Next</button>
+                <button onClick={()=> this.props.dispatch({type: 'SET_FEEDBACK', payload: this.state.newFeedback})}
+                {...this.handleClick}>Next</button>
             </div>  
         )
     }

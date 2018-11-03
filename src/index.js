@@ -11,7 +11,8 @@ import logger from 'redux-logger';
 //Puts this info into state
 const feedbackReducer = (state = [], action) => {
     console.log('in reducer');
-    if(action.type === 'SET_ELEMENTS') {
+    if(action.type === 'SET_FEEDBACK') {
+        console.log(action.payload);
         return action.payload
     }
     return state;
