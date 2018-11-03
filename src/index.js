@@ -9,11 +9,13 @@ import logger from 'redux-logger';
 
 //feedbackReducer collects feedback(number rank 1-5 and comment)
 //Puts this info into state
-const feedbackReducer = (state = [], action) => {
-    console.log('in reducer');
-    if(action.type === 'SET_FEEDBACK') {
-        console.log(action.payload);
-        state ={...state, action}
+const feedbackReducer = (state = [ ], action) => {
+    if(action.type === 'SET_FEELING') {
+        state = action.payload
+    }else{
+        if(action.type === 'SET_UNDERSTAND'){
+        state = [...state, action.payload] 
+        }
     }
     return state;
 }

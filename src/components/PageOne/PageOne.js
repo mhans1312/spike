@@ -22,7 +22,7 @@ class PageOne extends Component {
     handleClick = (event) => {
         event.preventDefault();
         console.log(this.state.newFeedback)
-        this.props.dispatch({type: 'SET_FEEDBACK', payload: this.state});
+        this.props.dispatch({type: 'SET_FEELING', payload: this.state});
         this.props.history.push('/PageTwo')
     }
 
