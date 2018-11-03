@@ -13,7 +13,7 @@ class PageFour extends Component {
       console.log('about to POST', this.props.reduxState.feedbackReducer);
     axios.post({
       method: 'POST',
-      url: '/api/feedback',
+      url: '/feedback',
       data: this.props.reduxState.feedbackReducer
     })
     .then((response) => {
@@ -45,7 +45,7 @@ class PageFour extends Component {
             <div>
                 <h1>Any comments you want to leave?</h1>
                     <form>
-                        <textarea onChange={this.handleInputComment} name="comment" form="usrform" placeholder="Enter comments here..."></textarea>
+                        <textarea onChange={this.handleInputComment} name="comments" form="usrform" placeholder="Enter comments here..."></textarea>
                     </form>
                 <button onClick={this.handleClick}>Next</button>
             </div>

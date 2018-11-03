@@ -9,24 +9,22 @@ import logger from 'redux-logger';
 
 //feedbackReducer collects feedback(number rank 1-5 and comment)
 //Puts this info into state
-const feedbackReducer = (state = [ ], action) => {
+const feedbackReducer = (state = {comments:'' }, action) => {
     if(action.type === 'SET_FEELING') {
         state = action.payload
-    }else{
-        if(action.type === 'SET_UNDERSTANDING'){
-        state = {...state, ...action.payload} 
-        }else{
-            if(action.type === 'SET_SUPPORT'){
-                state = {...state, ...action.payload}
-            }else{
-                if(action.type === 'SET_COMMENT'){
-                    state = {...state, ...action.payload}
-                }
-            }
-        }
+    }else if(action.type === 'SET_UNDERSTANDING'){
+        state = {...state, ...action.payload}     
+    }else if(action.type === 'SET_SUPPORT'){
+            state = {...state, ...action.payload}
+    }else if(action.type === 'SET_COMMENT'){
+            state.comments = action.payload.comments
     }
     return state;
 }
+        
+        
+    
+
 
 
 //Create store
