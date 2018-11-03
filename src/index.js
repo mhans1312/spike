@@ -13,7 +13,7 @@ const feedbackReducer = (state = [], action) => {
     console.log('in reducer');
     if(action.type === 'SET_FEEDBACK') {
         console.log(action.payload);
-        return action.payload
+        state ={...state, action}
     }
     return state;
 }
