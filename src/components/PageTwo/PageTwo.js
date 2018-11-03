@@ -11,11 +11,11 @@ class PageTwo extends Component {
             <div>
                 <h1>How well are you understanding the content?</h1>
                     <form>
-                        <input type="radio" />
-                        <input type="radio" />
-                        <input type="radio" />
-                        <input type="radio" />
-                        <input type="radio" />
+                        <input type="radio" value="1" /><label>1</label>
+                        <input type="radio" value="2" /><label>2</label>
+                        <input type="radio" value="3" /><label>3</label>
+                        <input type="radio" value="4" /><label>4</label>
+                        <input type="radio" value="5" /><label>5</label>
                     </form>
                 <button onClick={this.handleClick}>Next</button>
             </div>
