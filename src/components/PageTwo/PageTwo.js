@@ -19,7 +19,7 @@ class PageTwo extends Component {
     handleClick = (event) => {
         event.preventDefault();
         console.log(this.state.pageTwoFeedback)
-        this.props.dispatch({type: 'SET_UNDERSTAND', payload: this.state});
+        this.props.dispatch({type: 'SET_UNDERSTANDING', payload: this.state});
         this.props.history.push('/PageThree')
     }
 

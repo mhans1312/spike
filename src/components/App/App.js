@@ -9,17 +9,34 @@ import PageThree from '../PageThree/PageThree';
 import PageFour from '../PageFour/PageFour';
 import PageFive from '../PageFive/PageFive';
 
+const newFeedback = {
+  feeling: '',
+  understanding: '',
+  support: '',
+  comments: '',
+
+}
+
 //setting up class
 class App extends Component {
+
+  state = newFeedback
 
   // componentDidMount(){
   //   this.getFeedback();
   // }
 
-  //getting the feedback
-  // getFeedback = () => {
-  //   axios.get()
-  // }
+  //posting the feedback
+  postFeedback = () => {
+    axios.post({
+      method: 'POST',
+      url: '/api/feedback',
+      data: {newFeedback: this.state}
+    })
+    .then((response) => {
+      console.log('response from POST', response);
+    })
+  }
 
   render() {
     return (
