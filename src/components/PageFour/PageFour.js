@@ -9,7 +9,10 @@ class PageFour extends Component {
     render() {
         return(
             <div>
-                <h1>Page Four</h1>
+                <h1>Any comments you want to leave?</h1>
+                    <form>
+                        <textarea name="comment" form="usrform" placeholder="Enter comments here..."></textarea>
+                    </form>
                 <button onClick={this.handleClick}>Next</button>
             </div>
         )

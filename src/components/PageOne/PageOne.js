@@ -1,7 +1,4 @@
 import React, {Component} from 'react';
-//import {withRouter} from 'react-router-dom';
-
-
 
 class PageOne extends Component {
 
@@ -12,7 +9,14 @@ handleClick = () => {
     render() {
         return(
             <div>
-                <h1>Page One</h1>
+                <h1>How are you feeling today?</h1>
+                    <form>
+                        <input type="radio" />
+                        <input type="radio" />
+                        <input type="radio" />
+                        <input type="radio" />
+                        <input type="radio" />
+                    </form>
                 <button onClick={this.handleClick}>Next</button>
             </div>  
         )
