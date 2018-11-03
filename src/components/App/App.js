@@ -26,17 +26,7 @@ class App extends Component {
   //   this.getFeedback();
   // }
 
-  //posting the feedback
-  postFeedback = () => {
-    axios.post({
-      method: 'POST',
-      url: '/api/feedback',
-      data: {newFeedback: this.state}
-    })
-    .then((response) => {
-      console.log('response from POST', response);
-    })
-  }
+
 
   render() {
     return (

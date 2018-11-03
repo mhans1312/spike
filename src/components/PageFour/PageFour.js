@@ -1,26 +1,44 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import axios from 'axios';
 
 class PageFour extends Component {
 
     state = {
-        comment: ''
+        comments: ''
     }
+
+      //posting the feedback
+  postFeedback = () => {
+      console.log('about to POST', this.props.reduxState.feedbackReducer);
+    axios.post({
+      method: 'POST',
+      url: '/api/feedback',
+      data: this.props.reduxState.feedbackReducer
+    })
+    .then((response) => {
+      console.log('response from POST', response);
+    })
+  }
 
     handleInputComment = (event) => {
         this.setState({
             ...this.state,
-            comment: event.target.value 
+            comments: event.target.value 
         });
-        console.log('clicked number is: ', event.target.comment);
+        console.log('clicked number is: ', event.target.comments);
     }
     
     handleClick = (event) => {
         event.preventDefault();
-        console.log(this.state.comment)
+        console.log(this.state.comments)
         this.props.dispatch({type: 'SET_COMMENT', payload: this.state});
+        console.log('what we have before postFeedback', this.state);
+        this.postFeedback();
         //this.props.history.push('PageFour')
     }
+
+
 
     render() {
         return(

@@ -4,13 +4,13 @@ import {connect} from 'react-redux';
 class PageTwo extends Component {
 
     state = {
-        pageTwoFeedback: ''
+        understanding: ''
     }
 
     handleInputNumber = (event) => {
         this.setState({
             ...this.state,
-            pageTwoFeedback: event.target.value,
+            understanding: event.target.value,
         });
         console.log('clicked number is: ', event.target.value);
         
@@ -18,7 +18,7 @@ class PageTwo extends Component {
 
     handleClick = (event) => {
         event.preventDefault();
-        console.log(this.state.pageTwoFeedback)
+        console.log(this.state.understanding)
         this.props.dispatch({type: 'SET_UNDERSTANDING', payload: this.state});
         this.props.history.push('/PageThree')
     }
