@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 class PageOne extends Component {
 
     state = {
-        newFeedback: ''
+        pageOneFeedback: ''
     }
     //sending feedback to reducer
 
@@ -13,7 +13,7 @@ class PageOne extends Component {
     handleInputNumber = (event) => {
         this.setState({
             ...this.state,
-            newFeedback: event.target.value 
+            pageOneFeedback: event.target.value 
         });
         console.log('clicked number is: ', event.target.value);
     }
@@ -21,7 +21,7 @@ class PageOne extends Component {
     //getting input number into state and going to next page
     handleClick = (event) => {
         event.preventDefault();
-        console.log(this.state.newFeedback)
+        console.log(this.state.pageOneFeedback)
         this.props.dispatch({type: 'SET_FEELING', payload: this.state});
         this.props.history.push('/PageTwo')
     }

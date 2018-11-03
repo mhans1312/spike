@@ -14,7 +14,15 @@ const feedbackReducer = (state = [ ], action) => {
         state = action.payload
     }else{
         if(action.type === 'SET_UNDERSTAND'){
-        state = [...state, action.payload] 
+        state = {...state, ...action.payload} 
+        }else{
+            if(action.type === 'SET_SUPPORT'){
+                state = {...state, ...action.payload}
+            }else{
+                if(action.type === 'SET_COMMENT'){
+                    state = {...state, ...action.payload}
+                }
+            }
         }
     }
     return state;

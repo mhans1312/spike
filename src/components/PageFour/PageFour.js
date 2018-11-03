@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 class PageFour extends Component {
+
+    state = {
+        comment: ''
+    }
 
     handleInputComment = (event) => {
         this.setState({
@@ -10,8 +15,11 @@ class PageFour extends Component {
         console.log('clicked number is: ', event.target.comment);
     }
     
-    handleClick = () => {
-        this.props.history.push('PageFive')
+    handleClick = (event) => {
+        event.preventDefault();
+        console.log(this.state.comment)
+        this.props.dispatch({type: 'SET_COMMENT', payload: this.state});
+        //this.props.history.push('PageFour')
     }
 
     render() {
@@ -27,4 +35,6 @@ class PageFour extends Component {
     }
 }
 
-export default PageFour;
+const mapStateToProps = (reduxState) => ({reduxState})
+
+export default connect(mapStateToProps)(PageFour);

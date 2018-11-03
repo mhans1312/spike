@@ -4,20 +4,20 @@ import {connect} from 'react-redux';
 class PageThree extends Component {
 
     state = {
-        newFeedback: ''
+        pageThreeFeedback: ''
     }
 
     handleInputNumber = (event) => {
         this.setState({
             ...this.state,
-            newFeedback: event.target.value 
+            pageThreeFeedback: event.target.value 
         });
         console.log('clicked number is: ', event.target.value);
     }
 
     handleClick = (event) => {
         event.preventDefault();
-        console.log(this.state.newFeedback)
+        console.log(this.state.pageThreeFeedback)
         this.props.dispatch({type: 'SET_SUPPORT', payload: this.state});
         this.props.history.push('PageFour')
     }
