@@ -3,6 +3,10 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
+import PropTypes from 'prop-types';
+// import {withStyles} from '@material-ui/styles';
+import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
+import { IconButton } from '@material-ui/core';
 
 class admin extends Component {
 
@@ -63,13 +67,13 @@ class admin extends Component {
 
         return(
             <div>
-                <table>
+                <table style={{width: 400, margin: 'auto'}}>
                     <thead>
-                        <tr>
+                        <tr style={{backgroundColor: 'black', color: 'white'}}>
                             <th>Feelings</th><th>Understanding</th><th>Support</th><th>Comments</th><th>Delete</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody style={{backgroundColor: '#35FF00'}}>
                         {
                             this.state.feedback.map( feedback =>
                                 <tr key={feedback.id}>
@@ -81,7 +85,7 @@ class admin extends Component {
                                     <button onClick={() => 
                                         { if (window.confirm('Are you sure you wish to delete this item?')) 
                                         this.deleteFeedback(feedback.id) } 
-                                        }>Delete
+                                        }><DeleteForeverOutlinedIcon className="Delete" />
                                     </button>
                                     </div>
                                 </tr>
@@ -93,6 +97,10 @@ class admin extends Component {
         )
     
     }
+}
+
+IconButton.propTypes = {
+    classes: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = (reduxState) => ({reduxState})

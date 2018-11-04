@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
 
 class PageFour extends Component {
 
@@ -49,7 +50,7 @@ class PageFour extends Component {
                     <form>
                         <textarea onChange={this.handleInputComment} name="comments" form="usrform" placeholder="Enter comments here..."></textarea>
                     </form>
-                <button onClick={() => {if (window.confirm('Are you sure you want to submit this feedback?'))this.handleClick()}}>Submit</button>
+                <Button variant="contained" color="primary" onClick={() => {if (window.confirm('Are you sure you want to submit this feedback?'))this.handleClick()}}>Submit</Button>
             </div>
         )
     }
