@@ -4,7 +4,16 @@ const pool = require('../modules/pool.js');
 
 
 router.get('/', (req, res) => {
-  res.send(feedbackList);
+  const sqlText = `SELECT * FROM feedback ORDER BY id;`;
+  pool.query(sqlText)
+  .then((result) => {
+    console.log('from GET', result.rows)
+    res.send(result.rows);
+  })
+  .catch((error) => {
+    console.log('error from GET')
+    res.sendStatus(500);
+  })
 });
 
 router.post('/', (req, res) => {

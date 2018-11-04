@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
 import {HashRouter as Router, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
@@ -43,6 +42,7 @@ class App extends Component {
           <Route path="/PageThree" component={PageThree} />
           <Route path="/PageFour" component={PageFour} />
           <Route path="/PageFive" component={PageFive} />
+          <Route path="/admin" component={admin} />
         </div>
         </Router>
         <br/>

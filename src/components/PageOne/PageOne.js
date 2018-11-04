@@ -26,6 +26,12 @@ class PageOne extends Component {
         this.props.history.push('/PageTwo')
     }
 
+    handleAdmin = (event) => {
+        console.log('clicked on admin')
+        event.preventDefault();
+        this.props.history.push('/admin')
+    }
+
     render() {
         return(
             <div>
@@ -38,7 +44,11 @@ class PageOne extends Component {
                         <input onChange={this.handleInputNumber} type="radio" value="5"/><label>5</label>
                         <button type="submit">Next</button>
                     </form>
-                
+                <footer>
+                    <form onSubmit={this.handleAdmin}>
+                        <button type="submit">Admin</button>
+                    </form>
+                </footer>
             </div>  
         )
     }
