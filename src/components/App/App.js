@@ -9,25 +9,10 @@ import PageFour from '../PageFour/PageFour';
 import PageFive from '../PageFive/PageFive';
 import admin from '../admin/admin';
 
-const newFeedback = {
-  feeling: '',
-  understanding: '',
-  support: '',
-  comments: '',
-
-}
-
 //setting up class
 class App extends Component {
 
-  state = newFeedback
-
-  // componentDidMount(){
-  //   this.getFeedback();
-  // }
-
-
-
+  //using Router and Route to navigate the app
   render() {
     return (
       <div className="App">
@@ -51,6 +36,7 @@ class App extends Component {
   }
 }
 
+//obligatory copy and paste just to be sure
 const mapStateToProps = reduxState => ({reduxState});
 
 export default connect(mapStateToProps)(App);

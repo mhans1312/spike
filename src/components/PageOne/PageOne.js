@@ -3,13 +3,12 @@ import {connect} from 'react-redux';
 
 class PageOne extends Component {
 
+    //setting state
     state = {
         feeling: ''
     }
-    //sending feedback to reducer
 
-
-    //getting the clicked number into state
+    //giving the clicked number a value in order to send to reducer
     handleInputNumber = (event) => {
         this.setState({
             ...this.state,
@@ -18,7 +17,7 @@ class PageOne extends Component {
         console.log('clicked number is: ', event.target.value);
     }
 
-    //getting input number into state and going to next page
+    //getting input number and sending it to the reducer then going to next page
     handleClick = (event) => {
         event.preventDefault();
         console.log(this.state.feeling)
@@ -26,6 +25,7 @@ class PageOne extends Component {
         this.props.history.push('/PageTwo')
     }
 
+    //setting up the admin button to navigate to admin page
     handleAdmin = (event) => {
         console.log('clicked on admin')
         event.preventDefault();

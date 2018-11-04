@@ -7,6 +7,7 @@ class PageTwo extends Component {
         understanding: ''
     }
 
+    //giving the clicked number a value in order to send to reducer
     handleInputNumber = (event) => {
         this.setState({
             ...this.state,
@@ -16,6 +17,7 @@ class PageTwo extends Component {
         
     }
 
+    //getting input number and sending it to the reducer then going to next page
     handleClick = (event) => {
         event.preventDefault();
         console.log(this.state.understanding)

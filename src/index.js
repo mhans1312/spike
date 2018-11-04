@@ -21,11 +21,6 @@ const feedbackReducer = (state = {comments:'' }, action) => {
     }
     return state;
 }
-        
-        
-    
-
-
 
 //Create store
 const reduxStore = createStore(

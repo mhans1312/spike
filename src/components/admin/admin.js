@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class admin extends Component {
 
@@ -39,6 +41,24 @@ class admin extends Component {
         })
     }
 
+    //trying to get alert to work
+    submit = () => {
+        confirmAlert({
+          title: 'Confirm to submit',
+          message: 'Delete this feedback?',
+          buttons: [
+            {
+              label: 'Yes',
+              onClick: () => alert('Click Yes')
+            },
+            {
+              label: 'No',
+              onClick: () => alert('Click No')
+            }
+          ]
+        })
+      };
+
     render(){
         return(
             <div>
@@ -56,7 +76,7 @@ class admin extends Component {
                                     <td>{feedback.understanding}</td>
                                     <td>{feedback.support}</td>
                                     <td>{feedback.comments}</td>
-                                    <button onClick={()=>{
+                                    <button onClick={this.submit}{...()=>{
                                         this.deleteFeedback(feedback.id)
                                     }}>Delete</button>
                                 </tr>

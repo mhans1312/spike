@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool.js');
 
-
+//setting up get
 router.get('/', (req, res) => {
   const sqlText = `SELECT * FROM feedback ORDER BY id;`;
   pool.query(sqlText)
@@ -16,6 +16,7 @@ router.get('/', (req, res) => {
   })
 });
 
+//setting up post
 router.post('/', (req, res) => {
   console.log('inside router POST')
   const feedback = req.body;
@@ -31,6 +32,7 @@ router.post('/', (req, res) => {
   })
 });
 
+//setting up delete
 router.delete('/:id', (req, res) => {
   let reqId = req.params.id;
   let sqlText = `DELETE FROM feedback WHERE id=$1;`;

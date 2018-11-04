@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 class PageFive extends Component {
 
+    //send user back to first page
     handleClick = () => {
         this.props.history.push('')
     }

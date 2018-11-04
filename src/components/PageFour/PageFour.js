@@ -21,6 +21,7 @@ class PageFour extends Component {
     })
   }
 
+    //assigning a value to the comments in order to send it to reducer
     handleInputComment = (event) => {
         this.setState({
             ...this.state,
@@ -29,6 +30,7 @@ class PageFour extends Component {
         console.log('clicked number is: ', event.target.comments);
     }
     
+    //sending comment to the reducer and navigating to next page
     handleClick = (event) => {
         event.preventDefault();
         console.log(this.state.comments)
@@ -39,7 +41,7 @@ class PageFour extends Component {
     }
 
 
-
+    //making all the magic happen on the dom
     render() {
         return(
             <div>
@@ -47,7 +49,7 @@ class PageFour extends Component {
                     <form>
                         <textarea onChange={this.handleInputComment} name="comments" form="usrform" placeholder="Enter comments here..."></textarea>
                     </form>
-                <button onClick={this.handleClick}>Next</button>
+                <button onClick={this.handleClick}>Submit</button>
             </div>
         )
     }
