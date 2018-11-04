@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
+
 class PageOne extends Component {
 
     //setting state
@@ -37,18 +38,20 @@ class PageOne extends Component {
             <div>
                 <h1>How are you feeling today?</h1>
                     <form onSubmit={this.handleClick}>
-                        <input onChange={this.handleInputNumber} type="radio" value="1"/><label>1</label>
+                    <input onChange={this.handleInputNumber} type="radio" value="1"/><label>1</label>
                         <input onChange={this.handleInputNumber} type="radio" value="2"/><label>2</label>
                         <input onChange={this.handleInputNumber} type="radio" value="3"/><label>3</label>
                         <input onChange={this.handleInputNumber} type="radio" value="4"/><label>4</label>
                         <input onChange={this.handleInputNumber} type="radio" value="5"/><label>5</label>
                         <button type="submit">Next</button>
                     </form>
+                    
                 <footer>
                     <form onSubmit={this.handleAdmin}>
                         <button type="submit">Admin</button>
-                    </form>
+                        </form>
                 </footer>
+                
             </div>  
         )
     }

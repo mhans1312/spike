@@ -17,3 +17,12 @@
   font-size: large;
 }
 
+input[type="radio"]{
+  margin: 0 15px 0 15px;
+}
+
+label {
+  float: center;
+  padding: 0 1em;
+  text-align: center;
+}

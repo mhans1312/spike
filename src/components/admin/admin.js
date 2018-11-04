@@ -95,11 +95,6 @@ class admin extends Component {
     }
 }
 
-
-{/* <button onClick={()=>
-                                        {this.deleteFeedback(feedback.id)}
-                                        }>Delete</button> */}
-
 const mapStateToProps = (reduxState) => ({reduxState})
 
 export default connect(mapStateToProps)(admin);
