@@ -11,7 +11,7 @@ class PageFive extends Component {
     render() {
         return(
             <div>
-                <h1>Thank You!</h1>
+                <h1>Feedback Submitted! Thank You!</h1>
                 <button onClick={this.handleClick}>Leave New Feedback</button>
             </div>
         )
