@@ -69,11 +69,11 @@ class admin extends Component {
             <div>
                 <table style={{width: 400, margin: 'auto'}}>
                     <thead>
-                        <tr style={{backgroundColor: 'black', color: 'white'}}>
+                        <tr style={{backgroundColor: '#033076', color: 'white'}}>
                             <th>Feelings</th><th>Understanding</th><th>Support</th><th>Comments</th><th>Delete</th>
                         </tr>
                     </thead>
-                    <tbody style={{backgroundColor: '#35FF00'}}>
+                    <tbody style={{backgroundColor: '#B0C8FD'}}>
                         {
                             this.state.feedback.map( feedback =>
                                 <tr key={feedback.id}>
@@ -85,7 +85,7 @@ class admin extends Component {
                                     <button onClick={() => 
                                         { if (window.confirm('Are you sure you wish to delete this item?')) 
                                         this.deleteFeedback(feedback.id) } 
-                                        }><DeleteForeverOutlinedIcon className="Delete" />
+                                        }><DeleteForeverOutlinedIcon alignItems="center" className="Delete" />
                                     </button>
                                     </div>
                                 </tr>
@@ -99,9 +99,9 @@ class admin extends Component {
     }
 }
 
-IconButton.propTypes = {
-    classes: PropTypes.object.isRequired,
-}
+// IconButton.propTypes = {
+//     classes: PropTypes.object.isRequired,
+// }
 
 const mapStateToProps = (reduxState) => ({reduxState})
 

@@ -1,5 +1,18 @@
 # Redux Feedback Loop
 
+To enter the admin page, either click the admin button at the bottom of the first page or navigate directly to the admin page located here: http://localhost:3000/?#/admin
+
+The feedback app simply asks you to rank your feelings on a scale of 1 to 5 and leave a comment at the end.
+
+The administrator can see all the feedback logged and delete any feedback from the data base.
+
+
+
+
+
+
+
+
 > **PLEASE COMMENT YOUR CODE.** Do not clone this repository. Instead, download the zip, extract the contents, `git init`, `git add .`, `git commit -m "initial commit - base project"` and add your remote. Please do this before you leave for the day.
 
 "And my last reminder of the day, which is my last reminder of every day, is...?" - Luke

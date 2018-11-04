@@ -13,7 +13,7 @@ class PageFive extends Component {
         return(
             <div>
                 <h1>Feedback Submitted! Thank You!</h1>
-                <Button varient="contained" onClick={this.handleClick}>Leave New Feedback</Button>
+                <Button variant="contained" color="primary" onClick={this.handleClick}>Leave New Feedback</Button>
             </div>
         )
     }
