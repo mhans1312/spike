@@ -42,24 +42,25 @@ class admin extends Component {
     }
 
     //trying to get alert to work
-    submit = () => {
-        confirmAlert({
-          title: 'Confirm to submit',
-          message: 'Delete this feedback?',
-          buttons: [
-            {
-              label: 'Yes',
-              onClick: () => alert('Click Yes')
-            },
-            {
-              label: 'No',
-              onClick: () => alert('Click No')
-            }
-          ]
-        })
-      };
+    // submit = () => {
+    //     confirmAlert({
+    //       title: 'Confirm to submit',
+    //       message: 'Are you sure to do this.',
+    //       buttons: [
+    //         {
+    //           label: 'Yes',
+    //           onClick: () => (this.deleteFeedback())
+    //         },
+    //         {
+    //           label: 'No',
+    //           onClick: () => alert('Click No')
+    //         }
+    //       ]
+    //     })
+    //   };
 
     render(){
+
         return(
             <div>
                 <table>
@@ -76,9 +77,13 @@ class admin extends Component {
                                     <td>{feedback.understanding}</td>
                                     <td>{feedback.support}</td>
                                     <td>{feedback.comments}</td>
-                                    <button onClick={this.submit}{...()=>{
-                                        this.deleteFeedback(feedback.id)
-                                    }}>Delete</button>
+                                    <div>
+                                    <button onClick={() => 
+                                        { if (window.confirm('Are you sure you wish to delete this item?')) 
+                                        this.deleteFeedback(feedback.id) } 
+                                        }>Delete
+                                    </button>
+                                    </div>
                                 </tr>
                                 )
                         }
@@ -86,8 +91,14 @@ class admin extends Component {
                 </table>
             </div>
         )
+    
     }
 }
+
+
+{/* <button onClick={()=>
+                                        {this.deleteFeedback(feedback.id)}
+                                        }>Delete</button> */}
 
 const mapStateToProps = (reduxState) => ({reduxState})
 

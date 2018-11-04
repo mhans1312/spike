@@ -31,8 +31,8 @@ class PageFour extends Component {
     }
     
     //sending comment to the reducer and navigating to next page
-    handleClick = (event) => {
-        event.preventDefault();
+    handleClick = () => {
+        // event.preventDefault();
         console.log(this.state.comments)
         this.props.dispatch({type: 'SET_COMMENT', payload: this.state});
         console.log('what we have before postFeedback', this.state);
@@ -49,7 +49,7 @@ class PageFour extends Component {
                     <form>
                         <textarea onChange={this.handleInputComment} name="comments" form="usrform" placeholder="Enter comments here..."></textarea>
                     </form>
-                <button onClick={this.handleClick}>Submit</button>
+                <button onClick={() => {if (window.confirm('Are you sure you want to submit this feedback?'))this.handleClick()}}>Submit</button>
             </div>
         )
     }
