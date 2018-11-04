@@ -31,4 +31,16 @@ router.post('/', (req, res) => {
   })
 });
 
+router.delete('/:id', (req, res) => {
+  let reqId = req.params.id;
+  let sqlText = `DELETE FROM feedback WHERE id=$1;`;
+  pool.query(sqlText, [reqId])
+  .then((result) => {
+    res.sendStatus(200);
+  })
+  .catch((error) => {
+    console.log('error making DELETE', error);
+  })
+})
+
 module.exports = router;
