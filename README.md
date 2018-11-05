@@ -4,12 +4,8 @@ To enter the admin page, either click the admin button at the bottom of the firs
 
 The feedback app simply asks you to rank your feelings on a scale of 1 to 5 and leave a comment at the end.
 
-The administrator can see all the feedback logged and delete any feedback from the data base.
-
-
-
-
-
+The administrator can see all the feedback logged and delete any feedback from the database.
+ 
 
 
 

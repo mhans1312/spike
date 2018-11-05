@@ -10,6 +10,7 @@ import { IconButton } from '@material-ui/core';
 
 class admin extends Component {
 
+    //Setting state
     state = {
         feedback: [],
     }
@@ -18,6 +19,7 @@ class admin extends Component {
         this.getFeedback();
     }
 
+    //Setting GET request
     getFeedback =() => {
         axios.get('/feedback')
         .then((response) => {
@@ -32,6 +34,7 @@ class admin extends Component {
         })
     }   
     
+    //Setting DELETE request
     deleteFeedback = (id) => {
         axios({
             method: 'DELETE',
@@ -67,7 +70,7 @@ class admin extends Component {
 
         return(
             <div>
-                <table style={{width: 400, margin: 'auto'}}>
+                <table style={{width: 700, margin: 'auto'}}>
                     <thead>
                         <tr style={{backgroundColor: '#033076', color: 'white'}}>
                             <th>Feelings</th><th>Understanding</th><th>Support</th><th>Comments</th><th>Delete</th>
